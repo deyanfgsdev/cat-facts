@@ -13,19 +13,30 @@ const App = () => {
       .then((data) => {
         const { fact } = data
         setFact(fact)
+      }).catch((error) => {
+        console.error(error.message)
       })
   }, [])
 
   useEffect(() => {
     const getRandomCatFactImage = async () => {
-      const factFirstWord = fact.split(' ')[0]
+      try {
+        const factFirstWord = fact.split(' ')[0]
 
-      const response = await fetch(`https://cataas.com/cat/says/${factFirstWord}?json=true`)
-      const data = await response.json()
-      const { _id } = data
+        const response = await fetch(`https://cataas.com/cat/says/${factFirstWord}?json=true`)
 
-      const newFactImage = `${FACT_IMAGE_URL}/${_id}`
-      setFactImage(newFactImage)
+        if (!response.ok) {
+          throw new Error('Failed to fetch image')
+        }
+
+        const data = await response.json()
+        const { _id } = data
+
+        const newFactImage = `${FACT_IMAGE_URL}/${_id}`
+        setFactImage(newFactImage)
+      } catch (error) {
+        console.error(error.message)
+      }
     }
 
     if (fact) {
