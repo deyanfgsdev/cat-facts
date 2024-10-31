@@ -9,7 +9,13 @@ const App = () => {
 
   useEffect(() => {
     fetch(FACT_API_URL)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch fact')
+        }
+
+        return response.json()
+      })
       .then((data) => {
         const { fact } = data
         setFact(fact)
