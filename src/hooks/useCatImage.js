@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
-const FACT_IMAGE_URL = 'https://cataas.com/cat'
+const CAT_PREFIX_IMAGE_URL = 'https://cataas.com/cat'
 
-const useFactImage = ({ fact }) => {
-  const [factImage, setFactImage] = useState('')
+const useCatImage = ({ fact }) => {
+  const [catImage, setCatImage] = useState('')
 
   useEffect(() => {
-    const getRandomCatFactImage = async () => {
+    const getCatRandomImage = async () => {
       try {
         const factFirstWord = fact.split(' ')[0]
 
@@ -19,19 +19,19 @@ const useFactImage = ({ fact }) => {
         const data = await response.json()
         const { _id } = data
 
-        const newFactImage = `${FACT_IMAGE_URL}/${_id}`
-        setFactImage(newFactImage)
+        const newCatImage = `${CAT_PREFIX_IMAGE_URL}/${_id}`
+        setCatImage(newCatImage)
       } catch (error) {
         console.error(error.message)
       }
     }
 
     if (fact) {
-      getRandomCatFactImage()
+      getCatRandomImage()
     }
   }, [fact])
 
-  return [factImage]
+  return [catImage]
 }
 
-export default useFactImage
+export default useCatImage
