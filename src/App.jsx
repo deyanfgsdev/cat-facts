@@ -1,28 +1,12 @@
+import useFact from './hooks/useFact'
+
 import { useState, useEffect } from 'react'
 
-const FACT_API_URL = 'https://catfact.ninja/fact'
 const FACT_IMAGE_URL = 'https://cataas.com/cat'
 
 const App = () => {
-  const [fact, setFact] = useState('')
+  const [fact] = useFact()
   const [factImage, setFactImage] = useState('')
-
-  useEffect(() => {
-    fetch(FACT_API_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch fact')
-        }
-
-        return response.json()
-      })
-      .then((data) => {
-        const { fact } = data
-        setFact(fact)
-      }).catch((error) => {
-        console.error(error.message)
-      })
-  }, [])
 
   useEffect(() => {
     const getRandomCatFactImage = async () => {
