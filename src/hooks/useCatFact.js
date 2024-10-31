@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 
 const FACT_API_URL = 'https://catfact.ninja/fact'
 
-const useFact = () => {
+const useCatFact = () => {
   const [fact, setFact] = useState('')
 
-  useEffect(() => {
-    fetch(FACT_API_URL)
+  const fetchFact = () => {
+    return fetch(FACT_API_URL)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch fact')
@@ -16,13 +16,22 @@ const useFact = () => {
       })
       .then((data) => {
         const { fact } = data
-        setFact(fact)
+
+        return fact
       }).catch((error) => {
         console.error(error.message)
       })
-  }, [])
+  }
 
-  return [fact]
+  const refreshFact = () => {
+    fetchFact().then((newFact) => {
+      setFact(newFact)
+    })
+  }
+
+  useEffect(refreshFact, [])
+
+  return { fact, refreshFact }
 }
 
-export default useFact
+export default useCatFact

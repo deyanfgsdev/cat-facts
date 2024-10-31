@@ -1,20 +1,20 @@
-import useFact from './hooks/useFact'
+import useCatFact from './hooks/useCatFact'
 import useCatImage from './hooks/useCatImage'
 
 const App = () => {
-  const [fact] = useFact()
-  const [catImage] = useCatImage({ fact })
+  const { fact, refreshFact } = useCatFact()
+  const { catImageURL } = useCatImage({ fact })
 
-  const handleFactButtonClick = () => {
-
+  const handleNewFactClick = () => {
+    refreshFact()
   }
 
   return (
     <div className='cat-facts-app'>
       <h1>Cat Facts</h1>
-      {fact && <p className='fact'>{fact}</p>}
-      {catImage && <img src={catImage} alt={`Random image from fact first word ${fact}`} className='cat-image' />}
-      <button className='fact-button' onClick={handleFactButtonClick}>Get new fact</button>
+      {fact && <p className='cat-fact'>{fact}</p>}
+      {catImageURL && <img src={catImageURL} alt={`Random image from first word for fact ${fact}`} className='cat-image' />}
+      <button className='fact-button' onClick={handleNewFactClick}>Get new fact</button>
     </div>
   )
 }

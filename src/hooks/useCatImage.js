@@ -6,6 +6,10 @@ const useCatImage = ({ fact }) => {
   const [catImageURL, setCatImageURL] = useState('')
 
   useEffect(() => {
+    if (!fact) {
+      return
+    }
+
     const getCatRandomImage = async () => {
       try {
         const factFirstWord = fact.split(' ')[0]
@@ -24,12 +28,10 @@ const useCatImage = ({ fact }) => {
       }
     }
 
-    if (fact) {
-      getCatRandomImage()
-    }
+    getCatRandomImage()
   }, [fact])
 
-  return [catImageURL]
+  return { catImageURL }
 }
 
 export default useCatImage
