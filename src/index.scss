@@ -1,0 +1,29 @@
+:root {
+  font-family: "Roboto", sans-serif;
+  color-scheme: light dark;
+  background-color: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+button {
+  outline: none;
+}
