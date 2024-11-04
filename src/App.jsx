@@ -1,5 +1,9 @@
+import Header from './components/Header'
+
 import useCatFact from './hooks/useCatFact'
 import useCatImage from './hooks/useCatImage'
+
+import './App.scss'
 
 const App = () => {
   const { fact, refreshFact } = useCatFact()
@@ -11,7 +15,7 @@ const App = () => {
 
   return (
     <div className='cat-facts-app'>
-      <h1>Cat Facts</h1>
+      <Header mainTitle='Cat Facts' />
       {fact && <p className='cat-fact'>{fact}</p>}
       {catImageURL && <img src={catImageURL} alt={`Random image from first word for fact ${fact}`} className='cat-image' />}
       <button className='fact-button' onClick={handleNewFactClick}>Get new fact</button>
