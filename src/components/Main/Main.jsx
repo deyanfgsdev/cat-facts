@@ -15,7 +15,7 @@ const Main = () => {
     <main className='main'>
       {fact && <p className='main__cat-fact'>{fact}</p>}
       {catImageURL && <img src={catImageURL} alt={`Random image from first word for fact ${fact}`} className='main__cat-image' />}
-      <button className='get-fact-button' onClick={handleNewFactClick}>Get new fact</button>
+      <button className='main__get-fact-button' onClick={handleNewFactClick}>Get new fact</button>
     </main>
   )
 }
