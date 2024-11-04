@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Header from './components/Header/Header'
 
 import useCatFact from './hooks/useCatFact'
 import useCatImage from './hooks/useCatImage'
