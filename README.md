@@ -15,11 +15,11 @@ APIs used:
 
 ### Built with:
 
-![Skills](https://skillicons.dev/icons?i=react,vite,js,html,sass)
+![Skills](https://go-skill-icons.vercel.app/api/icons?i=react,vite,javascript,html,sass,playwright)
 
 ## Deployed in:
 
-![Skills](https://skillicons.dev/icons?i=vercel)
+![Skills](https://go-skill-icons.vercel.app/api/icons?i=vercel)
 
 ## Installation and setup
 
