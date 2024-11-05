@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { fetchFact } from '../services/facts'
 
 const useCatFact = () => {
-  const [fact, setFact] = useState('')
+  const [fact, setFact] = useState(null)
 
   const refreshFact = () => {
     fetchFact().then((newFact) => {
