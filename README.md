@@ -17,7 +17,7 @@ APIs used:
 
 ![Skills](https://go-skill-icons.vercel.app/api/icons?i=react,vite,javascript,html,sass,playwright)
 
-## Deployed in:
+### Deployed in:
 
 ![Skills](https://go-skill-icons.vercel.app/api/icons?i=vercel)
 
