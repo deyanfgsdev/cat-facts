@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
-const CAT_PREFIX_IMAGE_URL = 'https://cataas.com/cat/says'
+export const CAT_PREFIX_IMAGE_URL = 'https://cataas.com/cat/says'
 
 const useCatImage = ({ fact }) => {
-  const [catImageURL, setCatImageURL] = useState('')
+  const [catImageURL, setCatImageURL] = useState(null)
 
   useEffect(() => {
     if (!fact) {
