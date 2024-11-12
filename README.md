@@ -2,7 +2,7 @@
 
 ## Description
 
-"Cat Facts App" is an interactive web application that displays random cat facts obtained from the Cat Fact Ninja API. Additionally, the first word of each fact is used to search for and display a random cat image from the CATAAS API. Users can generate new facts and see the related images by simply clicking a button. This application showcases the use of external APIs, data manipulation, and the integration of visual components in a React application.
+"Cat Facts" is an interactive web application that displays random cat facts obtained from the Cat Fact Ninja API. Additionally, the first word of each fact is used to search for and display a random cat image from the CATAAS API. Users can generate new facts and see the related images by simply clicking a button. This application showcases the use of external APIs, data manipulation, and the integration of visual components in a React application.
 
 APIs used:
 
