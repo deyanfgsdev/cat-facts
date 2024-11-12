@@ -37,6 +37,16 @@ npm install
 npm run dev
 ```
 
+### E2E testing with Playwright:
+
+```
+# Run test
+npx playwright test
+
+# Run test in UI mode
+npx playwright test --ui
+```
+
 ## Copyright
 
 © 2024 Deyán Fabricio Guacarán Sabogal. All rights reserved.
