@@ -2,7 +2,7 @@ import { CatFactResponse } from './facts.types';
 
 const FACT_API_URL = 'https://catfact.ninja/fact';
 
-export const fetchFact = () => {
+export const fetchFact = (): Promise<string | null> => {
   return fetch(FACT_API_URL)
     .then((response) => {
       if (!response.ok) {
@@ -18,5 +18,7 @@ export const fetchFact = () => {
     })
     .catch((error) => {
       console.error(error.message);
+
+      return null;
     });
 };
